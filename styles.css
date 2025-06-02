@@ -1,0 +1,224 @@
+/* styles.css */
+
+/* --- Overall Body and Main Container --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font stack */
+  line-height: 1.7;
+  color: #444; /* Slightly darker text for better contrast with lighter backgrounds */
+  margin: 0;
+  padding: 0;
+  /* === Option 2: Subtle Geometric Pattern === */
+  background-color: #e8e8e8; /* Base colour for the pattern */
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d4d4d4' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4s4-1.79 4-4h2c0 3.314-2.686 6-6 6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.main-container { /* Class usually applied by R Markdown to the main content area */
+  max-width: 1140px; 
+  margin: 35px auto; 
+  padding: 30px 45px; 
+  background-color: #ffffff; /* White background for the content itself */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07); 
+  border-radius: 8px; 
+}
+
+/* --- Header Meta Styling (Title, Author, Date) --- */
+/* R Markdown typically wraps these in h1.title, p.author, p.date */
+h1.title { /* Targets the main title of the document */
+  font-weight: bold !important; 
+  font-size: 2.8em !important; /* Slightly larger title */
+  color: #2c3e50 !important;
+  margin-top: 0.5em !important; 
+  border-bottom: 3px solid #3498db !important; /* Ensure this is applied */
+  padding-bottom: 0.3em !important;
+  margin-bottom: 0.8em !important;
+}
+
+p.author { /* Targets the author line */
+  font-weight: bold !important; 
+  font-size: 1.25em !important; 
+  color: #34495e !important;   
+  margin-top: 0.5em !important;
+  margin-bottom: 0.2em !important;
+}
+
+p.date { /* Targets the date line */
+  font-style: italic !important; 
+  font-size: 1em !important;
+  color: #7f8c8d !important; 
+  margin-top: 0.2em !important;
+  margin-bottom: 2.5em !important; /* More space after date before TOC/content */
+}
+
+
+/* --- Typography (General Headings and Text) --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif; 
+  color: #2c3e50; 
+  margin-top: 1.8em;
+  margin-bottom: 0.7em;
+  line-height: 1.3;
+  font-weight: 700; 
+}
+/* Redefine general H1 if it's different from title, otherwise title style applies */
+/* h1 { font-size: 2.5em; border-bottom: 3px solid #3498db; padding-bottom: 0.3em; margin-bottom: 1em;} */
+h2 { 
+  font-size: 2em; 
+  border-bottom: 1px solid #bdc3c7; 
+  padding-bottom: 0.25em; 
+}
+h3 { font-size: 1.7em; color: #34495e; } 
+h4 { font-size: 1.4em; color: #7f8c8d; } 
+
+p {
+  margin-bottom: 1.2em;
+  color: #4a4a4a; 
+  font-size: 1.05em; 
+}
+
+a {
+  color: #2980b9; 
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  border-bottom: 1px dotted #2980b9;
+}
+a:hover, a:focus {
+  color: #1c5a80; 
+  text-decoration: none;
+  border-bottom: 1px solid #1c5a80;
+}
+
+/* --- Code Blocks and Inline Code --- */
+pre, code {
+  font-family: 'Fira Code', 'Consolas', 'Menlo', 'Monaco', monospace; 
+  background-color: #f6f8fa; 
+  color: #24292e; 
+  border: 1px solid #e1e4e8; 
+  border-radius: 5px; 
+  font-size: 0.9em;
+}
+
+pre { 
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); 
+}
+code { 
+  padding: 0.2em 0.45em;
+  margin: 0 0.1em;
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.8em;
+  font-size: 0.95em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+th, td {
+  border: 1px solid #dfe2e5; 
+  padding: 10px 14px; 
+  text-align: left;
+}
+th {
+  background-color: #f6f8fa; 
+  font-weight: 600; 
+  color: #24292e;
+  border-bottom-width: 2px; 
+}
+tr:nth-child(even) td { 
+  background-color: #fbfcfd; 
+}
+tr:hover td { 
+  background-color: #f0f5fa;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+  border-left: 5px solid #5dade2; 
+  padding: 1em 1.5em;
+  margin: 1.8em 0;
+  color: #52575c;
+  background-color: #f8f9fa;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Images/Plots --- */
+img, .figure img { 
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); 
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Table of Contents (if using toc_float) --- */
+#TOC {
+  background-color: #fdfdfd;
+  border: 1px solid #eaecee;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+#TOC ul { padding-left: 15px; list-style-type: none; }
+#TOC ul li { margin-bottom: 0.4em; }
+#TOC ul li a { 
+  color: #0069d9; 
+  font-weight: 500;
+  font-size: 0.95em;
+}
+#TOC ul li a:hover { color: #004085; text-decoration: none; }
+#TOC .nav-pills .active > a, 
+#TOC .nav-pills .active > a:hover, 
+#TOC .nav-pills .active > a:focus {
+    background-color: #007bff; 
+    color: white !important;
+    border-radius: 4px;
+}
+
+/* --- Horizontal Rule --- */
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  margin: 2em 0;
+}
+
+/* --- Alerts or Info Boxes --- */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+/* Ensure the main content area is clearly delineated from the body background */
+.main-container {
+    padding: 30px 45px !important; 
+    background-color: #ffffff !important; 
+    border-radius: 8px;
+}
+
+/* Override for plots if the global theme_set isn't fully picked up by specific themes */
+.figure {
+    background-color: transparent !important; 
+}
